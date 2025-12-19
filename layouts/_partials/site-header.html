@@ -1,0 +1,40 @@
+<header>
+  <div class="pa3 {{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
+    <div class="flex-l center items-center justify-between">
+      <a href="{{ .Site.Home.RelPermalink }}" class="f4 fw6 hover-white white-90 dib no-underline">
+        {{ with .Site.Params.site_logo }}
+          <img src="{{ urls.RelURL . }}" class="w100 mw5-ns" alt="{{ $.Site.Title }}" />
+        {{ else }}
+          {{ .Site.Title }}
+        {{ end }}
+      </a>
+      <nav class="flex items-center">
+        <a href="/" class="f6 fw4 hover-white white-70 dib no-underline flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr1">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          Perks
+        </a>
+        <span class="mh3 white-30">|</span>
+        <a href="/about/" class="f6 fw4 hover-white white-70 dib no-underline flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr1">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          About
+        </a>
+      </nav>
+      <nav class="flex items-center">
+        <a href="/login/" class="f6 fw4 hover-white white-70 dib no-underline mr3">Login</a>
+        <a href="/my-profile/" class="hover-white white-70 dib no-underline flex items-center" title="My Profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

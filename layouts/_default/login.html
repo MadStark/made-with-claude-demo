@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns">
+  <div class="mw6 center">
+    <h1 class="f4 fw6 mv0 mb4">Login</h1>
+    <form class="ba b--black-10 pa4 br2 bg-white">
+      <div class="mb3">
+        <label class="db fw6 lh-copy f6" for="email">Email</label>
+        <input class="pa2 input-reset ba bg-transparent w-100" type="email" id="email" placeholder="you@example.com">
+      </div>
+      <div class="mb3">
+        <label class="db fw6 lh-copy f6" for="password">Password</label>
+        <input class="pa2 input-reset ba bg-transparent w-100" type="password" id="password" placeholder="Password">
+      </div>
+      <div class="mb3">
+        <label class="pa0 ma0 lh-copy f6 pointer">
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+      <div>
+        <a href="/my-profile/" class="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-blue pointer">Sign In</a>
+      </div>
+      <div class="lh-copy mt3">
+        <a href="#" class="f6 link dim black db">Forgot your password?</a>
+        <a href="#" class="f6 link dim black db">Sign up</a>
+      </div>
+    </form>
+  </div>
+</article>
+{{ end }}

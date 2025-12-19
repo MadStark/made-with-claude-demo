@@ -1,0 +1,89 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns">
+  <div class="mw8 center">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb3 flex-wrap">
+      <div>
+        <h1 class="f4 fw6 mv0">Exclusive Perks & Discounts</h1>
+        <p class="f6 gray mv0">Discover amazing deals from our partner brands.</p>
+      </div>
+      <div class="flex flex-wrap">
+      <button class="filter-btn bg-blue white ba b--blue br-pill ph3 pv2 ma1 pointer f6 fw5" data-category="all">
+        All
+      </button>
+      {{- $categories := slice -}}
+      {{- range (where .Site.RegularPages "Section" "perks") -}}
+        {{- with .Params.category -}}
+          {{- $categories = $categories | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $categories = $categories | uniq | sort -}}
+      {{- range $categories -}}
+      <button class="filter-btn bg-white blue ba b--blue br-pill ph3 pv2 ma1 pointer f6 fw5" data-category="{{ . | lower }}">
+        {{ . }}
+      </button>
+      {{- end }}
+      </div>
+    </div>
+
+    <div id="perks-grid" class="flex flex-wrap">
+      {{ range (where .Site.RegularPages "Section" "perks") }}
+      <div class="perk-item w-100 w-50-m w-third-l pa2 flex" data-category="{{ .Params.category | lower }}">
+        <a href="{{ .RelPermalink }}" class="db link dim w-100">
+          <div class="bg-white br3 shadow-4 overflow-hidden h-100 flex flex-column">
+            {{ with .Params.image }}
+            <div class="aspect-ratio aspect-ratio--16x9">
+              <img src="{{ . }}" alt="{{ $.Title }}" class="db aspect-ratio--object cover">
+            </div>
+            {{ else }}
+            <div class="aspect-ratio aspect-ratio--16x9 bg-light-gray">
+              <div class="aspect-ratio--object flex items-center justify-center">
+                <span class="f3 gray">{{ $.Title | truncate 1 "" }}</span>
+              </div>
+            </div>
+            {{ end }}
+            <div class="pa3 flex-grow-1">
+              <h2 class="f5 fw6 near-black mv0">{{ .Title }}</h2>
+              {{ with .Params.category }}
+              <span class="f7 ttu tracked blue">{{ . }}</span>
+              {{ end }}
+              <p class="f6 gray lh-copy mt2 mb0">{{ .Params.summary }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const perkItems = document.querySelectorAll('.perk-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const category = this.dataset.category;
+
+      // Update button styles
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-blue', 'white');
+        b.classList.add('bg-white', 'blue');
+      });
+      this.classList.remove('bg-white', 'blue');
+      this.classList.add('bg-blue', 'white');
+
+      // Filter perks
+      perkItems.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
+{{ end }}

@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns">
+  <div class="mw7 center">
+    <div class="flex items-center mb4">
+      <div class="w3 h3 br-100 bg-light-gray flex items-center justify-center mr3">
+        <span class="f3">JD</span>
+      </div>
+      <div>
+        <h1 class="ma0 f4 fw6">John Doe</h1>
+        <p class="ma0 f6 gray">john.doe@example.com</p>
+      </div>
+    </div>
+
+    <div class="ba b--black-10 pa4 br2 bg-white mb4">
+      <h2 class="mt0 f5 fw6">Account Details</h2>
+      <div class="mb3">
+        <label class="db fw6 lh-copy f6 mb1">Full Name</label>
+        <input class="pa2 input-reset ba bg-transparent w-100" type="text" value="John Doe">
+      </div>
+      <div class="mb3">
+        <label class="db fw6 lh-copy f6 mb1">Email</label>
+        <input class="pa2 input-reset ba bg-transparent w-100" type="email" value="john.doe@example.com">
+      </div>
+      <div class="mb3">
+        <label class="db fw6 lh-copy f6 mb1">Member Since</label>
+        <p class="ma0 f6 gray">January 2025</p>
+      </div>
+      <a href="#" class="f6 link dim br2 ph3 pv2 dib white bg-dark-blue">Save Changes</a>
+    </div>
+
+    <div class="ba b--black-10 pa4 br2 bg-white mb4">
+      <h2 class="mt0 f5 fw6">My Redeemed Perks</h2>
+      <ul class="list pl0 ma0 f6">
+        <li class="pv2 bb b--black-10">Amazon Discount - Redeemed on Dec 15, 2024</li>
+        <li class="pv2 bb b--black-10">Starbucks Cashback - Redeemed on Dec 10, 2024</li>
+        <li class="pv2">Nike Voucher - Redeemed on Nov 28, 2024</li>
+      </ul>
+    </div>
+
+    <div>
+      <a href="/login/" class="f6 link dim br2 ph3 pv2 dib white bg-dark-red">Sign Out</a>
+    </div>
+  </div>
+</article>
+{{ end }}

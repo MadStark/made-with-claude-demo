@@ -1,0 +1,14 @@
+baseURL = 'https://madstark.github.io/made-with-claude-demo/'
+languageCode = 'en-us'
+title = 'Perx'
+theme = 'ananke'
+
+[params]
+  site_logo = ""
+  description = "Exclusive discounts, vouchers, and deals from our partners"
+  favicon = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

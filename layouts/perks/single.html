@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns">
+  <div class="mw7 center">
+    <a href="/" class="f6 link blue hover-dark-blue mb3 dib">&larr; Back to all perks</a>
+
+    {{ with .Params.image }}
+    <div class="aspect-ratio aspect-ratio--16x9 mb4">
+      <img src="{{ . }}" alt="{{ $.Title }}" class="db aspect-ratio--object cover br3">
+    </div>
+    {{ end }}
+
+    <h1 class="f2 f1-ns mb2">{{ .Title }}</h1>
+
+    {{ with .Params.category }}
+    <span class="f6 ttu tracked blue mb3 dib">{{ . }}</span>
+    {{ end }}
+
+    {{ with .Params.discount }}
+    <div class="bg-light-green pa3 br2 mb4">
+      <span class="f4 fw6 dark-green">{{ . }}</span>
+    </div>
+    {{ end }}
+
+    <div class="f4 lh-copy measure">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.link }}
+    <a href="{{ . }}" target="_blank" rel="noopener" class="dib mt4 ph4 pv3 bg-blue white br-pill link hover-bg-dark-blue fw6">
+      Get this offer &rarr;
+    </a>
+    {{ end }}
+  </div>
+</article>
+{{ end }}
