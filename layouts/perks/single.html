@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="pa3 pa4-ns">
   <div class="mw7 center">
-    <a href="/" class="f6 link blue hover-dark-blue mb3 dib">&larr; Back to all perks</a>
+    <a href="{{ .Site.Home.RelPermalink }}" class="f6 link blue hover-dark-blue mb3 dib">&larr; Back to all perks</a>
 
     {{ with .Params.image }}
     <div class="aspect-ratio aspect-ratio--16x9 mb4">
