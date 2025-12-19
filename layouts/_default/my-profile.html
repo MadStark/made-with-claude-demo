@@ -38,7 +38,7 @@
     </div>
 
     <div>
-      <a href="{{ "/login/" | relURL }}" class="f6 link dim br2 ph3 pv2 dib white bg-dark-red">Sign Out</a>
+      <a href="{{ with .Site.GetPage "/login" }}{{ .RelPermalink }}{{ end }}" class="f6 link dim br2 ph3 pv2 dib white bg-dark-red">Sign Out</a>
     </div>
   </div>
 </article>

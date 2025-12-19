@@ -17,7 +17,7 @@
         </label>
       </div>
       <div>
-        <a href="{{ "/my-profile/" | relURL }}" class="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-blue pointer">Sign In</a>
+        <a href="{{ with .Site.GetPage "/my-profile" }}{{ .RelPermalink }}{{ end }}" class="f6 link dim br2 ph3 pv2 mb2 dib white bg-dark-blue pointer">Sign In</a>
       </div>
       <div class="lh-copy mt3">
         <a href="#" class="f6 link dim black db">Forgot your password?</a>
